@@ -1,0 +1,52 @@
+openapi: 3.0.3
+info:
+  title: Webhook API
+  description: Este projeto tem como finalidade disponibilizar endpoints e modelar payloads para deixar compatível a integração com leads-delivery
+  version: 1.0.0
+servers:
+- url: /api/webhooks/v1
+ 
+paths:
+  
+  /mercado-livre:
+    post:
+      tags:
+        - Mercado Livre
+      summary: Return code 200
+      description: Endpoint pra integração da aplicação casa mineira com mercado livre
+      operationId: sendLeadFromMercadoLivre
+      requestBody:
+        required: true
+        description: Lead enviado pela origem
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        200:
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: number
+
+  /info:
+    get:
+      tags:
+        - Mercado Livre
+      summary: Return code 200
+      description: Endpoint pra integração da aplicação casa mineira com mercado livre
+      operationId: getInfo
+      responses:
+        200:
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: number
+
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
