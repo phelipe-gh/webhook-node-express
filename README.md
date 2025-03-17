@@ -61,3 +61,5 @@ Para testes estamos usando jest
 yarn test:unit
 ```
 
+### Run local
+  yarn dev
